@@ -14,20 +14,19 @@
     {%endif%}
 </head>
 <body>
-    <nav>
-        <div class="search-bar"></div>
-        <div class="logo"></div>
+    <nav>  
+        <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
         <div class="links">
-            <div class="links">
-                <ul>
+                <ul class="horizontal">
                     <li><a href="{{url_for('home')}}">Home</a></li>
                     <li><a href="{{url_for('about')}}">About</a></li>
                     <li><a href="{{url_for('login')}}">Login</a></li>
                     <li><a href="{{url_for('register')}}">Register</a></li>
                 </ul>
-            </div>
         </div>
+        
     </nav>
+    
     
     {%block content%}
     {%endblock%}

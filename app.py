@@ -14,7 +14,7 @@ from flask_migrate import Migrate
 from routes.user_bp import user_bp
 
 """creation of the application"""
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 
 """configuration of the application using config.py"""
 app.config.from_object('config')
