@@ -1,98 +1,120 @@
-{%extends 'base/layout.html'%}
-{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/register.css')}}">
+
+    
+    {%if title%}
+    <title>DigiShop - {{title}}</title>
+    {%else%}
+    <title>DigiShop</title>
+    {%endif%}
+
+</head>
+<body>
+
+    {%block content%}
 <form method="POST" action="">
     {{form.hidden_tag()}}<!--gotta see what it does-->
     <fieldset>
-        <legend>DigiShop</legend>
+        <img class="logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
         <div>
-            {{form.firstname.label()}}
             {%if form.firstname.errors%}
-                {{form.firstname()}}
+                {{form.firstname(class="firstname", placeholder="First name")}}
                 <div>
                     {%for error in form.firstname.errors%}
                         <span>{{error}}</span>
                     {%endfor%}
                 </div>
             {%else%}
-                {{form.firstname()}}
+                {{form.firstname(class="firstname", placeholder="First name")}}
             {%endif%}
             
         </div>
         <div>
-            {{form.familyname.label()}}
+            
             {%if form.familyname.errors%}
-                {{form.familyname()}}
+                {{form.familyname(class="familyname",placeholder="Family name")}}
                 <div>
                     {%for error in form.familyname.errors%}
                         <span>{{error}}</span>
                     {%endfor%}
                 </div>
             {%else%}
-                {{form.familyname()}}
+                {{form.familyname(class="familyname",placeholder="Family name")}}
             {%endif%}
         </div>
         <div>
-            {{form.username.label()}}
+            
             {%if form.username.errors%}
-                {{form.username()}}
+                {{form.username(class="username",placeholder="Username")}}
                 <div>
                     {%for error in form.username.errors%}
                         <span>{{error}}</span>
                     {%endfor%}
                 </div>
             {%else%}
-                {{form.username()}}
+                {{form.username(class="username",placeholder="Username")}}
             {%endif%}
         </div>
         <div>
-            {{form.email.label()}}
+          
             {%if form.email.errors%}
-                {{form.email()}}
+                {{form.email(class="email",placeholder="Email")}}
                 <div>
                     {%for error in form.email.errors%}
                         <span>{{error}}</span>
                     {%endfor%}
                 </div>
             {%else%}
-                {{form.email()}}
+                {{form.email(class="email",placeholder="Email")}}
             {%endif%}
         </div>
         <div>
-            {{form.password.label()}}
+            
             {%if form.password.errors%}
-                {{form.password()}}
+                {{form.password(class="password",placeholder="Password")}}
                 <div>
                     {%for error in form.password.errors%}
                         <span>{{error}}</span>
                     {%endfor%}
                 </div>
             {%else%}
-                {{form.password()}}
+                {{form.password(class="password",placeholder="Password")}}
             {%endif%}
         </div>
         <div>
-            {{form.confirm_password.label()}}
+           
             {%if form.confirm_password.errors%}
-                {{form.confirm_password()}}
+                {{form.confirm_password(class="confirmpassword",placeholder="Confirm password")}}
                 <div>
                     {%for error in form.confirm_password.errors%}
                         <span>{{error}}</span>
                     {%endfor%}
                 </div>
             {%else%}
-                {{form.confirm_password()}}
+                {{form.confirm_password(class="confirmpassword",placeholder="Confirm password")}}
             {%endif%}
         </div>
     </fieldset>
+
     <div>
-        {{form.submit()}}
+        {{form.submit(class="signup")}}
     </div>
+    <small>
+        Already have an account ? <a href="{{url_for('login')}}">log in</a> 
+    </small>
+    
 </form>
 <div>
-    <small>
-       Already have an account ? <a href="{{url_for('login')}}">log in</a> 
-    </small>
+    
 </div>
-
 {%endblock content%}
+    
+</body>
+</html>
+
