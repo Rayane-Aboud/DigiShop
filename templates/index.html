@@ -1,0 +1,30 @@
+{%extends "base/layout.html"%}
+
+{%block content%}
+    {%for product in products%}
+        <div class="product">
+            <h1>{{product.title}}</h1>
+            <ul>
+                <li>seller : {{product.user}}</li>
+                <li>product name : {{product.name}}</li>
+                <li>category : {{product.category}}</li>
+                <li>price : {{product.price}}</li>
+                <li>state : {{product.state}}</li>
+                <li>date posted : {{product.date_posted}}</li>
+                <li>location : {{product.location}}</li>
+                <li>phone number : {{product.phone_number}}</li>
+                <li>Contact :
+                    <ul>
+                        <li>e-mail : {{product.mail}}</li>
+                        {%if product.facebook%}
+                            <li>facebook : {{product.facebook}}</li>
+                        {%endif%}
+                        {%if product.instagram%}
+                            <li>instagram : {{product.instagram}}</li>
+                        {%endif%}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    {%endfor%}
+{%endblock content%}

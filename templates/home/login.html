@@ -1,0 +1,53 @@
+{%extends 'base/layout.html'%}
+{%block content%}
+
+<form method="POST" action="">
+    {{form.hidden_tag()}}<!--gotta see what it does-->
+    <fieldset>
+        <legend>Log In</legend>
+
+        <div>
+            {{form.email.label()}}
+            {%if form.email.errors%}<!--ajouter compte non existant-->
+                {{form.email()}}
+                <div>
+                    {%for error in form.email.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                </div>
+            {%else%}
+                {{form.email()}}
+            {%endif%}
+        </div>
+        <div>
+            {{form.password.label()}} <!--ajouter password ghalet-->
+            {%if form.password.errors%}
+                {{form.password()}}
+                <div>
+                    {%for error in form.password.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                </div>
+            {%else%}
+                {{form.password()}}
+            {%endif%}
+        </div>
+        <div>
+            {{form.remember_me()}}
+            {{form.remember_me.label()}}
+        </div>
+    </fieldset>
+    <div>
+        {{form.submit()}}
+    </div>
+    <small>
+        <a href="#">forgot password ?</a>
+    </small>
+</form>
+<div>
+    <small>
+       Don't have an account ? <a href="{{url_for('register')}}">Sign Up</a> 
+    </small>
+</div>
+
+{%endblock content%}
