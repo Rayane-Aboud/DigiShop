@@ -14,6 +14,7 @@ from flask_migrate import Migrate
 from routes.user_bp import user_bp
 
 """creation of the application"""
+
 app = Flask(__name__,static_url_path='/static')
 
 """configuration of the application using config.py"""
@@ -65,10 +66,16 @@ app.register_blueprint(user_bp,url_prefix='/users')
 
 """route to the home page"""
 @app.route('/')
-@app.route('/home')
+
+@app.route('/homepage')
+def homepage():
+    return render_template('home/homepage.html')
+    
+@app.route('/products')
 def home():
     return render_template('index.html',products = products)
 
+    
 @app.route('/about')
 def about():
     return render_template('home/about.html')
