@@ -1,4 +1,5 @@
 """init the application, render the main page"""
+from turtle import title
 from flask import Flask, render_template,url_for,flash,redirect
 
 """importing the form structures"""
@@ -67,18 +68,25 @@ app.register_blueprint(user_bp,url_prefix='/users')
 """route to the home page"""
 @app.route('/')
 
-@app.route('/homepage')
-def homepage():
-    return render_template('home/homepage.html')
-    
+@app.route('/admin')
+def admin():
+    return render_template('admin/admin.html',title='admin',show_references=True)
+
 @app.route('/products')
 def home():
     return render_template('index.html',products = products)
 
+@app.route('/homepage')
+def homepage():
+    return render_template('home/homepage.html',title='Homepage',show_references=False)
     
 @app.route('/about')
 def about():
     return render_template('home/about.html')
+
+@app.route('/myAccount')
+def myaccount():
+    return render_template('home/myAccount.html')
 
 @app.route('/register',methods=['GET','POST'])
 def register():
