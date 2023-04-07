@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+{% extends "base/layout.html" %}
+
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/addproduct.css')}}">
+
+    {%if title%}
+    <title>DigiShop - {{title}}</title>
+    {%else%}
+    <title>DigiShop</title>
+    {%endif%}
+    
+</head>
+<body>
+    
+    <form method="POST" action="">
+        {{form.hidden_tag()}}<!--gotta see what it does-->
+        <fieldset>
+            <img class="logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
+
+            <div class="sellerinfo">
+
+                <div>
+                    {%if form.sellername.errors%}
+                        {{form.sellername(class="sellername", placeholder="Name")}}
+                        <div>
+                            {%for error in form.sellername.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.sellername(class="sellername", placeholder="Name")}}
+                    {%endif%}                
+                </div>
+                
+                <div>
+                    {%if form.location.errors%}
+                        {{form.location(class="location", placeholder="Location")}}
+                        <div>
+                            {%for error in form.location.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.location(class="location", placeholder="Location")}}
+                    {%endif%}                
+                </div>
+
+                <div>
+                    {%if form.phone.errors%}
+                        {{form.phone(class="phone", placeholder="Phone number")}}
+                        <div>
+                            {%for error in form.phone.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.phone(class="phone", placeholder="Phone number")}}
+                    {%endif%}                
+                </div>
+
+                <div>
+                    {%if form.email.errors%}
+                        {{form.phone(class="email", placeholder="Email")}}
+                        <div>
+                            {%for error in form.email.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.email(class="email", placeholder="Email")}}
+                    {%endif%}                
+                </div>              
+
+            </div>
+
+            <div class="productinfo">
+
+                <div>
+                    {%if form.productName.errors%}
+                        {{form.productName(class="productName", placeholder="Product name")}}
+                        <div>
+                            {%for error in form.productName.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.productName(class="productName", placeholder="Product name")}}
+                    {%endif%}                
+                </div>
+
+                 <div>
+                    {%if form.productName.errors%}
+                        {{form.productName(class="phone", placeholder="Phone number")}}
+                        <div>
+                            {%for error in form.phone.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.phone(class="phone", placeholder="Phone number")}}
+                    {%endif%}                
+                </div>
+
+                <div>
+                    {%if form.brand.errors%}
+                        {{form.brand(class="brand", placeholder="Brand")}}
+                        <div>
+                            {%for error in form.brand.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.brand(class="brand", placeholder="Brand")}}
+                    {%endif%}                
+                </div>
+
+                <div>
+                    {%if form.description.errors%}
+                        {{form.description(class="description", placeholder="Description")}}
+                        <div>
+                            {%for error in form.description.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.description(class="description", placeholder="Description")}}
+                    {%endif%}                
+                </div>
+                
+                <div>
+                    {%if form.category.errors%}
+                        {{form.category(class="category", placeholder="Category")}}
+                        <div>
+                            {%for error in form.category.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.category(class="category", placeholder="Category")}}
+                    {%endif%}                
+                </div>
+                
+                <div>
+                    {%if form.price.errors%}
+                        {{form.price(class="price", placeholder="Price")}}
+                        <div>
+                            {%for error in form.price.errors%}
+                                <span>{{error}}</span>
+                            {%endfor%}
+                        </div>
+                    {%else%}
+                        {{form.price(class="price", placeholder="Price")}}
+                    {%endif%}                
+                </div>
+
+                <div>
+                    {% if form.image.errors %}
+                    {{ form.image(class="form-control is-invalid") }}
+                    <div class="invalid-feedback">
+                      {% for error in form.image.errors %}
+                        <span>{{ error }}</span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.image(class="form-control") }}
+                  {% endif %}
+                </div>
+                
+                 
+            </div>         
+        </fieldset>
+        <div>
+            {{form.submit(class="Submit")}}
+        </div>
+    
+        
+    </form>
+</body>
+</html>
+
+{% endblock %}    
