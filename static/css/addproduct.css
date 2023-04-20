@@ -1,0 +1,225 @@
+
+body {
+    background-image: url('/static/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    font-family: poppins;
+    width: auto;
+    height: auto;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 1084px;
+    height: fit-content;
+    background: #F6F6F6;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+fieldset{
+    border: none;
+}
+
+.container{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+
+.sellerinfo{
+    float: left;
+    width: 45%;
+    box-sizing: border-box;
+    padding: 10px;
+
+}
+
+.productinfo{
+    float: left;
+    width: 45%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.logo{
+    width: 168px;
+    height: 45px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.sellername{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.location{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.phone{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.email{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+
+.productName{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.brand{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.description{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.category{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.price{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+
+
+.upload{
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    background: #626262;
+    font-family: poppins;
+    font-weight: 300;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.form-control{
+    display: none;
+}
+
+
+.Submit{
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    background: #FF5951;
+    font-family: poppins;
+    font-weight: 500;
+    color: black;
+    border-radius: 10px;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
