@@ -36,7 +36,7 @@ class AddProductForm(FlaskForm):
     price = DecimalField('Price', validators=[DataRequired()], places=2)
 
 
-    image = FileField('Upload an image',description='Upload image',validators=[FileRequired(), FileAllowed(['jpg', 'png'], 'Images only!')])
+    image = FileField('Upload image',description='Upload image',validators=[FileRequired(), FileAllowed(['jpg', 'png'], 'Images only!')])
 
 
     submit = SubmitField('Submit')

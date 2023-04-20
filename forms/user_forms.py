@@ -8,8 +8,7 @@ class RegistrationForm(FlaskForm):
     
     familyname = StringField('Family name :',validators = [DataRequired()])
     
-    username = StringField('Username',
-                           validators=[DataRequired(),Length(min=2, max=20)])
+    username = StringField('Username', validators=[DataRequired(),Length(min=2, max=20)])
     
     #add the name of the shop or entreprise 
     email = StringField('Email',validators=[DataRequired(),Email()])
