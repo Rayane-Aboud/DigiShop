@@ -21,13 +21,14 @@
 </head>
 <body>
     
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {{form.csrf_token }}
         {{form.hidden_tag()}}<!--gotta see what it does-->
         <fieldset>
             <img class="logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
-
+            <div class="container">
             <div class="sellerinfo">
-
+                <p class="sellerinfotitle">Seller informations :</p>
                 <div>
                     {%if form.sellername.errors%}
                         {{form.sellername(class="sellername", placeholder="Name")}}
@@ -83,7 +84,7 @@
             </div>
 
             <div class="productinfo">
-
+                <p class="productinfotitle">Product informations :</p>
                 <div>
                     {%if form.productName.errors%}
                         {{form.productName(class="productName", placeholder="Product name")}}
@@ -97,18 +98,6 @@
                     {%endif%}                
                 </div>
 
-                 <div>
-                    {%if form.productName.errors%}
-                        {{form.productName(class="phone", placeholder="Phone number")}}
-                        <div>
-                            {%for error in form.phone.errors%}
-                                <span>{{error}}</span>
-                            {%endfor%}
-                        </div>
-                    {%else%}
-                        {{form.phone(class="phone", placeholder="Phone number")}}
-                    {%endif%}                
-                </div>
 
                 <div>
                     {%if form.brand.errors%}
@@ -162,25 +151,28 @@
                     {%endif%}                
                 </div>
 
+            
                 <div>
+                    {{form.image.label(class="upload")}}
                     {% if form.image.errors %}
-                    {{ form.image(class="form-control is-invalid") }}
-                    <div class="invalid-feedback">
-                      {% for error in form.image.errors %}
-                        <span>{{ error }}</span>
-                      {% endfor %}
-                    </div>
-                  {% else %}
-                    {{ form.image(class="form-control") }}
-                  {% endif %}
-                </div>
-                
-                 
-            </div>         
-        </fieldset>
+                      {{ form.image(class="form-control is-invalid", placeholder="") }}
+                      <div class="invalid-feedback">
+                        {% for error in form.image.errors %}
+                          <span>{{ error }}</span>
+                        {% endfor %}
+                      </div>
+                    {% else %}
+                      {{ form.image(class="form-control", placeholder="") }}
+                    {% endif %}
+                    
+                  </div>
+            </div>  
+        </div>  
         <div>
             {{form.submit(class="Submit")}}
-        </div>
+        </div>     
+        </fieldset>
+        
     
         
     </form>
