@@ -14,17 +14,18 @@
     {%endif%}
 </head>
 <body>
-    <nav>  
+    <nav>
         <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
         <div class="links">
-                <ul class="horizontal">
-                    <li><a href="{{url_for('homepage')}}">Home</a></li>
-                    <li><a href="{{url_for('about')}}">About</a></li>
-                    <li><a href="{{url_for('myaccount')}}">My account</a></li>
-                </ul>
+            <ul class="horizontal">
+                <li><a href="{{url_for('homepage')}}">Home</a></li>
+                <li><a href="{{url_for('products')}}">Products</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('myaccount')}}">My account</a></li>
+            </ul>
         </div>
-        
     </nav>
+    
     
     
     {%block content%}
