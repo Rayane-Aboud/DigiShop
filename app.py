@@ -83,8 +83,8 @@ def admin():
     return render_template('admin/admin.html',title='admin')
 
 @app.route('/products')
-def home():
-    return render_template('index.html',products = products)
+def products():
+    return render_template('productView/products.html',title="Products")
 
 @app.route('/homepage')
 def homepage():
