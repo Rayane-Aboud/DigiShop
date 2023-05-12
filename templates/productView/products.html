@@ -1,18 +1,89 @@
+{% extends "base/layout.html" %}
+{% block content %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    {%if title%}
-    <title>DigiShop - {{title}}</title>
-    {%else%}
-    <title>DigiShop</title>
-    {%endif%}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-</head>
-<body>
-    Products page
-</body>
-</html>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/products.css')}}">
+
+        {%if title%}
+        <title>DigiShop - {{title}}</title>
+        {%else%}
+        <title>DigiShop</title>
+        {%endif%}
+
+    </head>
+    <body>
+        
+     <div class="parent">
+        <div class="ChatBox">
+            <div class="BotChat">
+                <img class="robot" src="{{ url_for('static', filename='images/Robot.png') }}" alt="Robot">
+                <p class="BotText"> Hello! how can i help you to find your product ?</p>
+            </div>
+
+            <form method="POST" action="" enctype="multipart/form-data">
+                {{form.csrf_token }}
+                {{form.hidden_tag()}}<!--gotta see what it does-->
+                <fieldset class="field">
+                    <div class="checkboxes">
+                        <div>
+                            <label>{{ form.all_products }} All</label>
+                        </div>
+
+                        <div>
+                            <label>{{ form.recommended_products }} Recommended</label>
+                        </div>
+
+                        <div>
+                            <label for="{{ form.category.id }}">Category :</label>
+                            {{ form.category(class="category-options") }}
+                        </div>
+
+                        <div>
+                            <label>{{ form.on_promotion }} On promotion</label>
+                        </div>
+                    </div>
+
+                    <div class="ClientZone">
+                        <div>
+                            {% if form.clientText.errors %}
+                              {{ form.clientText(class="clienttext", rows=5) }}
+                              <div class="invalid-feedback">
+                                {% for error in form.clientText.errors %}
+                                  <span>{{ error }}</span>
+                                {% endfor %}
+                              </div>
+                            {% else %}
+                              {{ form.clientText(class="clienttext", rows=5) }}
+                            {% endif %}
+                        </div>
+
+                        <div class="submit-image">
+                            {{form.submit(class="submit")}}
+                        </div> 
+                    </div>
+                </fieldset>    
+            </form>     
+        </div>
+        
+        <div class="products-nav">
+            {% include "productView/product_block.html" %}
+            {% include "productView/product_block.html" %}
+            {% include "productView/product_block.html" %}
+            {% include "productView/product_block.html" %}
+            {% include "productView/product_block.html" %}
+            {% include "productView/product_block.html" %}
+            {% include "productView/product_block.html" %}
+        </div>
+
+    
+        
+      
+    </div>
+    </body>
+    </html>
+{% endblock %}
