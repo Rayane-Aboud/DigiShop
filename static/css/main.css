@@ -18,6 +18,8 @@ nav img{
 }
 
 nav {
+   position: fixed;
+   z-index: 1000; 
    display: flex;
    justify-content: space-between;
    background: #F6F6F6;
