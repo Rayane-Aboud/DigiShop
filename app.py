@@ -2,6 +2,7 @@
 from turtle import title
 from flask import Flask, render_template,url_for,flash,redirect
 from forms.product_form import AddProductForm
+from forms.product_search_form import SelectProductForm
 
 """importing the form structures"""
 from forms.user_forms import RegistrationForm,LoginForm
@@ -69,6 +70,15 @@ app.register_blueprint(user_bp,url_prefix='/users')
 """route to the home page"""
 @app.route('/')
 
+@app.route('/products',methods=['GET','POST'])
+def products():
+    form = SelectProductForm()
+    if form.validate_on_submit():
+        return redirect(url_for('index'))
+    else:
+        print(form.errors)
+    return render_template('productView/products.html',title='products',form=form)
+    
 @app.route('/addproduct',methods=['GET','POST'])
 def addproduct():
     form = AddProductForm()
@@ -82,9 +92,6 @@ def addproduct():
 def admin():
     return render_template('admin/admin.html',title='admin')
 
-@app.route('/products')
-def products():
-    return render_template('productView/products.html',title="Products")
 
 @app.route('/homepage')
 def homepage():
@@ -92,7 +99,7 @@ def homepage():
     
 @app.route('/about')
 def about():
-    return render_template('home/about.html')
+    return render_template('home/about.html',title='About')
 
 @app.route('/myAccount')
 def myaccount():
