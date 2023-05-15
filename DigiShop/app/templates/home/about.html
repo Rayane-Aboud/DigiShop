@@ -1,4 +1,5 @@
 {% extends "base/layout.html" %}
+
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,18 +10,41 @@
     
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/about.css')}}">
 
-    {%if title%}
+    {% if title %}
     <title>DigiShop - {{title}}</title>
-    {%else%}
+    {% else %}
     <title>DigiShop</title>
-    {%endif%}
+    {% endif %}
 
 </head>
 <body>
-    <div class="content">
-        <p>Safta Abir : ja_safta@esi.dz</p>
-        <p>Aboud Rayane : jr_aboud@esi.dz</p>
-        <p>© 2023  DigiShop. All rights reserved.</p>
+    <div class="about-container">
+
+        <div class="content">
+
+            <h1>Welcome to DigiShop!</h1>
+            <p>DigiShop is an innovative e-commerce application designed to revolutionize your shopping experience. Our app utilizes the power of Chat GPT API to assist you in finding the perfect products quickly and effortlessly. Whether you're searching for electronics, fashion, home decor, or any other item, DigiShop is here to make your shopping journey a breeze.</p>
+    
+            <h2>Our Mission</h2>
+            <p>At DigiShop, our mission is to provide a seamless and personalized shopping experience for every user. We strive to connect you with the products you love, while ensuring a convenient and enjoyable online shopping environment. We believe in the power of artificial intelligence to simplify your search and deliver outstanding results.</p>
+    
+            <h2>Key Features</h2>
+            <ul>
+                <li>Chat GPT API Integration: Our advanced chatbot powered by Chat GPT API assists you in finding products through natural language conversations.</li>
+                <li>Wide Range of Products: Discover a vast selection of products across various categories, including electronics, fashion, home decor, and more.</li>
+                <li>User-Friendly Interface: Our intuitive and user-friendly interface makes it easy for you to navigate and explore the app effortlessly.</li>
+                <li>Product Listing and Details: View detailed information, including product names, sellers, prices, and descriptions for informed decision-making.</li>
+                <li>Add Your Products: As a user, you have the ability to add your own products to our platform, expanding the choices available to other shoppers.</li>
+            </ul>
+    
+            <h2>Meet the Team</h2>
+            <p>We are a dedicated team of developers and designers passionate about creating exceptional e-commerce experiences. Our team members bring expertise in AI, web development, and user experience to ensure that DigiShop exceeds your expectations.</p>
+    
+            <h2>Contact Us</h2>
+            <p>Have questions, suggestions, or feedback? We'd love to hear from you! Please feel free to reach out to our support team at support@digishop.com. We're here to assist you and address any concerns you may have.</p>
+    
+            <p>Thank you for choosing DigiShop for your online shopping needs. Happy shopping!</p>
+        </div>
     </div>
 </body>
 </html>

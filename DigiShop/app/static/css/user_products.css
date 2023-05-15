@@ -10,12 +10,12 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 50px;
-    width: 75%;
+    width: 85%;
     height: 750px;
     background: #e4d8d8;
     border-radius: 30px;
     box-sizing: border-box;
-    
+    margin-top: 50px;
 }
 
 .product-list{
@@ -24,21 +24,28 @@ body{
     
 }
 
-
+.title{
+    margin-bottom: 50px;
+}
 
 .product{
     background-color: #E1E1E1;
-    margin: 5px;
+    margin: 20px;
     flex-basis: 30%;
-    padding: 5%;
-    overflow: auto;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    position: relative;
   
-    /* Style the scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
-
 }
-
+.detail{
+    font-size: 12px;
+    justify-content: right;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
 .pages{
     position: fixed;
     bottom: 5%;

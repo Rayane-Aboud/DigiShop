@@ -6,13 +6,14 @@
 
 {%block content%}
 <div class="show-user-product-list">
-    <h1>Products by : {{user.username}} ({{products.total}})</h1>
+    <h1 class="title">Products by : {{user.username}} ({{products.total}})</h1>
     <div class="product-list">
         {%for product in products.items%}
             <div class="product">
-                <p>seller : {{product.seller.username}}</p>
-                <p><a href="{{url_for('product_bp.get_product',product_id=product.id)}}">product name : {{product.product_name}}</a></p>
-                <p>price : {{product.price}}</p>
+                <p>Seller : {{product.seller.username}}</p>
+                <p>Product name : {{product.product_name}}</p>
+                <p>Price : {{product.price}} DZD</p>   
+                <p><a  class="detail" href="{{url_for('product_bp.get_product',product_id=product.id)}}">Show product details</a></p>
             </div>
         {%endfor%}
     </div>
