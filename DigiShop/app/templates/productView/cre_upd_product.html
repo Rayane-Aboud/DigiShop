@@ -27,31 +27,22 @@
         <fieldset>
             <img class="logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
             <div class="container">
-            <div class="sellerinfo">
-                <p class="sellerinfotitle">Seller informations :</p>
-                
-                
+           
                 <div>
                     {%if form.location.errors%}
-                        {{form.location(class="location", placeholder="Location")}}
+                        {{form.location(class="location", placeholder="Seller's location")}}
                         <div>
                             {%for error in form.location.errors%}
                                 <span>{{error}}</span>
                             {%endfor%}
                         </div>
                     {%else%}
-                        {{form.location(class="location", placeholder="Location")}}
+                        {{form.location(class="location", placeholder="Seller's location")}}
                     {%endif%}                
                 </div>
 
+        
                 
-
-                            
-
-            </div>
-
-            <div class="productinfo">
-                <p class="productinfotitle">Product informations :</p>
                 <div>
                     {%if form.product_name.errors%}
                         {{form.product_name(class="product_name", placeholder="Product name")}}
@@ -81,17 +72,17 @@
 
                 <div>
                     {%if form.description.errors%}
-                        {{form.description(class="description", placeholder="Description")}}
-                        <div>
-                            {%for error in form.description.errors%}
-                                <span>{{error}}</span>
-                            {%endfor%}
+                        {{form.description(class="description", placeholder="Description", rows=3)}}
+                        <div class="invalid-feedback">
+                            {% for error in form.description.errors %}
+                              <span>{{ error }}</span>
+                            {% endfor %}
                         </div>
                     {%else%}
-                        {{form.description(class="description", placeholder="Description")}}
+                        {{form.description(class="description", placeholder="Description",rows=3)}}
                     {%endif%}                
                 </div>
-                
+               
                 <div>
                     {%if form.category.errors%}
                         {{form.category(class="category", placeholder="Category")}}
@@ -119,24 +110,25 @@
                 </div>
 
                 <div>
-                    {{form.picture.label()}}
+                    {{form.picture.label(class="upload")}}
                     {%if form.picture.errors%}
-                        {{form.picture}}
-                        {%for error in form.picture.errors%}
-                        <span>{{error}}</span>
-                        {%endfor%}
+                        {{form.picture(class="form-control is-invalid", placeholder="")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.picture.errors %}
+                              <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
                     {%else%}
-                        {{form.picture}}
-                        
+                        {{form.picture(class="form-control", placeholder="")}}
                     {%endif%}
                 </div>
                 
-            </div> 
             
-        </div>  
-        <div>
-            {{form.submit(class="Submit")}}
-        </div>     
+            
+            </div>  
+            <div>
+                {{form.submit(class="Submit")}}
+            </div>     
         </fieldset>
         
     

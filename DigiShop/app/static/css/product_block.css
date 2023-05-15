@@ -4,8 +4,8 @@ body {
 }
 
 .product-block{
-    height: 321px;
-    width: 221px;
+    height: 350px;
+    width: 220px;
     border-radius: 20px;
     padding: 20px;
     box-sizing: border-box;
@@ -16,10 +16,27 @@ body {
     height: fit-content; 
 }
 
+.product-image{
+    height: 180px;
+    width: 180x;
+    border-radius: 10px;
+}
 
-.description{
-margin-top: 15px;
+.info {
+margin-top: 20px;
 text-align: center;
+font-family: poppins;
+font-size: 12px;
+color: black;
+}
+
+.info a {
+color: black; /* Set the default text color of the anchor elements to black */
+text-decoration: none; /* Remove underline from the anchor elements if desired */
+}
+  
+.info a:hover {
+color: red; /* Set the text color of the anchor elements to orange when hovered */
 }
 
 .price{

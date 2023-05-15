@@ -60,10 +60,12 @@
         {%for product in products.items%}
             <div class="product-block">
                 <img class="product-image" src="{{ url_for('static',filename='product_pics/'+product.picture) }}" alt="product-image">
-                <p><a href="{{url_for('product_bp.get_product',product_id=product.id)}}">product name : {{product.product_name}}</a></p>
-                <p><a href="{{url_for('user_bp.get_user_products',username = product.seller.username)}}">seller : {{product.seller.username}}</a></p>
-                <p class="description"> {{product.description}} </p>
-                <p class="price"> {{product.price}} </p>
+                <div class="info">
+                    <p><a href="{{url_for('product_bp.get_product',product_id=product.id)}}">Product : {{product.product_name}}</a></p>
+                    <p><a href="{{url_for('user_bp.get_user_products',username = product.seller.username)}}">Seller : {{product.seller.username}}</a></p>
+                    <p> {{product.description}} </p>
+                </div>
+                <p class="price"> {{product.price}} DZD</p>
             </div>
         {%endfor%}
     </div>

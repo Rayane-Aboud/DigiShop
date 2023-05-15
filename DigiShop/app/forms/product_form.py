@@ -11,7 +11,7 @@ class ProductForm(FlaskForm):
     price = StringField('price :',validators=[DataRequired()])
     location = StringField('Location', validators=[DataRequired()])
     brand = StringField('Brand',validators=[DataRequired()])
-    picture = FileField('Update profile picture',validators=[FileAllowed(['jpg','jpeg','png'])])
+    picture = FileField('Upload product picture',validators=[FileAllowed(['jpg','jpeg','png'])])
     description = TextAreaField('description',validators=[DataRequired()])
     category = SelectField('Category', choices=[('option1', 'Electronics'),
                                                 ('option2', 'Fashion'), 
