@@ -127,3 +127,28 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.Location-text{
+    margin-top: 20px;
+}
+.Seller-text{
+    margin-top: 20px;
+}
+.Email-text{
+    margin-top: 20px;
+}
+.Productname-text{
+    margin-top: 20px;
+}
+.Brand-text{
+    margin-top: 20px;
+}
+.Category-text{
+    margin-top: 20px;
+}
+.Price-text{
+    margin-top: 20px;
+}
+.Description-text{
+    margin-top: 20px;
+}

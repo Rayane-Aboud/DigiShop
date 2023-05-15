@@ -52,17 +52,17 @@ class LoginForm(FlaskForm):
 class UpdateAccountForm(FlaskForm):
     
     
-    username = StringField('Username',
+    username = StringField('',
                            validators=[DataRequired(),Length(min=2, max=20)])
     
     #add the name of the shop or entreprise 
-    email = StringField('Email',validators=[DataRequired(),Email()])
+    email = StringField('',validators=[DataRequired(),Email()])
     
     #update the profile picture
     picture = FileField('Update profile picture',validators=[FileAllowed(['jpg','jpeg','png'])])
     
     #see if we add facebook stuff and instagram stuff
-    update = SubmitField('Update')
+    update = SubmitField('Submit')
     
     
     """creation of custom validators"""

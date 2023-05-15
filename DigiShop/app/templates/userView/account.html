@@ -4,62 +4,62 @@
 {%endblock style%}
 {%block content%}
 <div class="show-account">
+
+    <img class="logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
+
     <div class="profile-image">
         <img src="{{image_file}}" alt="profil_pic"/>
     </div>
     
-    <div class="">
-        <h2>{{current_user.username}}</h2>
-        <p>{{current_user.email}}</p>
-    </div>
-    
-
     <form method="POST" action="" enctype="multipart/form-data"><!--errors because of image-->
         {{form.hidden_tag()}}<!--gotta see what it does-->
         <fieldset>
-            <legend>Account info</legend>
+            <p class="username-text">Username :</p>
             <div>
                 {{form.username.label()}}
                 {%if form.username.errors%}
-                    {{form.username()}}
+                    {{form.username(class="username")}}
                     <div>
                         {%for error in form.username.errors%}
                             <span>{{error}}</span>
                         {%endfor%}
                     </div>
                 {%else%}
-                    {{form.username()}}
+                    {{form.username(class="username")}}
                 {%endif%}
             </div>
+            <p class="email-text">Email :</p>
             <div>
                 {{form.email.label()}}
                 {%if form.email.errors%}
-                    {{form.email()}}
+                    {{form.email(class="email")}}
                     <div>
                         {%for error in form.email.errors%}
                             <span>{{error}}</span>
                         {%endfor%}
                     </div>
                 {%else%}
-                    {{form.email()}}
+                    {{form.email(class="email")}}
                 {%endif%}
             </div>
+            
             <div>
-                {{form.picture.label()}}
+                {{form.picture.label(class="update")}}
                 {%if form.picture.errors%}
-                    {{form.picture}}
-                    {%for error in form.picture.errors%}
-                    <span>{{error}}</span>
-                    {%endfor%}
+                    {{form.picture(class="form-control is-invalid", placeholder="")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.picture.errors %}
+                          <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
                 {%else%}
-                    {{form.picture}}
-                    
+                    {{form.picture(class="form-control", placeholder="")}}
                 {%endif%}
             </div>
             
         </fieldset>
         <div>
-            {{form.update()}}
+            {{form.update(class="submit")}}
         </div>
     </form>
 </div>

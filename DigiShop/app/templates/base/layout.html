@@ -20,14 +20,14 @@
         <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
         <div class="links">
             <ul class="horizontal">
-                <li><a href="{{url_for('product_bp.get_products')}}">products</a></li>
+                <li><a href="{{url_for('product_bp.get_products')}}">Products</a></li>
                 
                 
                 
                 {%if current_user.is_authenticated %}
                 <li><a href="{{url_for('product_bp.create_product')}}">Add product</a></li>
-                <li><a href="{{url_for('user_bp.account')}}">Account</a></li>
-                <li><a href="{{url_for('user_bp.logout')}}">log out</a></li>
+                <li><a href="{{url_for('user_bp.account')}}">My account</a></li>
+                <li><a href="{{url_for('user_bp.logout')}}">Log out</a></li>
                 {%else%}
                 <li><a href="{{url_for('user_bp.register')}}">Sign-up / login</a></li>
                 {%endif%}     
