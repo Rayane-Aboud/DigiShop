@@ -1,0 +1,107 @@
+{%extends 'base/layout.html'%}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/register.css')}}">
+{%endblock style%}
+
+
+
+{%block content%}
+
+<form method="POST" action="">
+    {{form.hidden_tag()}}
+    <fieldset>
+        <img class="logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
+        <div>
+            {%if form.firstname.errors%}
+                {{form.firstname(class="firstname", placeholder="First name")}}
+                <div>
+                    {%for error in form.firstname.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                </div>
+            {%else%}
+                {{form.firstname(class="firstname", placeholder="First name")}}
+            {%endif%}
+            
+        </div>
+        <div>
+            
+            {%if form.familyname.errors%}
+                {{form.familyname(class="familyname",placeholder="Family name")}}
+                <div>
+                    {%for error in form.familyname.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                </div>
+            {%else%}
+                {{form.familyname(class="familyname",placeholder="Family name")}}
+            {%endif%}
+        </div>
+        <div>
+            
+            {%if form.username.errors%}
+                {{form.username(class="username",placeholder="Username")}}
+                <div>
+                    {%for error in form.username.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                </div>
+            {%else%}
+                {{form.username(class="username",placeholder="Username")}}
+            {%endif%}
+        </div>
+        <div>
+          
+            {%if form.email.errors%}
+                {{form.email(class="email",placeholder="Email")}}
+                <div>
+                    {%for error in form.email.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                </div>
+            {%else%}
+                {{form.email(class="email",placeholder="Email")}}
+            {%endif%}
+        </div>
+        <div>
+            
+            {%if form.password.errors%}
+                {{form.password(class="password",placeholder="Password")}}
+                <div>
+                    {%for error in form.password.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                </div>
+            {%else%}
+                {{form.password(class="password",placeholder="Password")}}
+            {%endif%}
+        </div>
+        <div>
+           
+            {%if form.confirm_password.errors%}
+                {{form.confirm_password(class="confirmpassword",placeholder="Confirm password")}}
+                <div>
+                    {%for error in form.confirm_password.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                </div>
+            {%else%}
+                {{form.confirm_password(class="confirmpassword",placeholder="Confirm password")}}
+            {%endif%}
+        </div>
+    </fieldset>
+
+    <div class="upload-image">
+        
+    </div>
+
+    <div>
+        {{form.submit(class="signup")}}
+    </div>
+    <small>
+        Already have an account ? <a href="{{url_for('user_bp.login')}}">log in</a> 
+    </small>
+    
+</form>
+
+{%endblock content%}

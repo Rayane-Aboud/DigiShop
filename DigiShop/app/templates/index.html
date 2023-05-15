@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/home.css')}}">
+
+    {%if title%}
+    <title>DigiShop - {{title}}</title>
+    {%else%}
+    <title>DigiShop</title>
+    {%endif%}
+</head>
+<body>
+    <img class="logo" src="{{ url_for('static', filename='images/Logoblack.png') }}" alt="Logo">
+
+    <h1>Find your perfect product match with AI.</h1>
+
+    <div>
+
+        <a href="{{ url_for('user_bp.register') }}" class="signupbutton">Sign Up</a>
+
+        <a href="{{ url_for('user_bp.login') }}" class="loginbutton">Login</a>
+        
+    </div>
+    
+
+
+
+
+</body>
+</html>

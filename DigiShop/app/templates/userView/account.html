@@ -1,0 +1,66 @@
+{%extends "base/layout.html"%}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/account.css')}}">
+{%endblock style%}
+{%block content%}
+<div class="show-account">
+    <div class="profile-image">
+        <img src="{{image_file}}" alt="profil_pic"/>
+    </div>
+    
+    <div class="">
+        <h2>{{current_user.username}}</h2>
+        <p>{{current_user.email}}</p>
+    </div>
+    
+
+    <form method="POST" action="" enctype="multipart/form-data"><!--errors because of image-->
+        {{form.hidden_tag()}}<!--gotta see what it does-->
+        <fieldset>
+            <legend>Account info</legend>
+            <div>
+                {{form.username.label()}}
+                {%if form.username.errors%}
+                    {{form.username()}}
+                    <div>
+                        {%for error in form.username.errors%}
+                            <span>{{error}}</span>
+                        {%endfor%}
+                    </div>
+                {%else%}
+                    {{form.username()}}
+                {%endif%}
+            </div>
+            <div>
+                {{form.email.label()}}
+                {%if form.email.errors%}
+                    {{form.email()}}
+                    <div>
+                        {%for error in form.email.errors%}
+                            <span>{{error}}</span>
+                        {%endfor%}
+                    </div>
+                {%else%}
+                    {{form.email()}}
+                {%endif%}
+            </div>
+            <div>
+                {{form.picture.label()}}
+                {%if form.picture.errors%}
+                    {{form.picture}}
+                    {%for error in form.picture.errors%}
+                    <span>{{error}}</span>
+                    {%endfor%}
+                {%else%}
+                    {{form.picture}}
+                    
+                {%endif%}
+            </div>
+            
+        </fieldset>
+        <div>
+            {{form.update()}}
+        </div>
+    </form>
+</div>
+{%endblock content%}

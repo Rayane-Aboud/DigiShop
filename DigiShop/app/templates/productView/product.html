@@ -1,0 +1,78 @@
+{%extends 'base/layout.html'%}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/product.css')}}">
+{%endblock style%}
+{%block content%}
+
+
+<div class="show-product">
+    
+    <img class="logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
+    <div class="container">
+        
+        <div class="seller-info">
+            <h3>Seller informations:</h3>
+                <p>seller</p>
+                <div class="field">
+                    {{product.seller.username}}
+                </div>
+
+                <p>location</p>
+                <div class="field">
+                    {{product.seller.location}}
+                </div>
+
+                <p>e-mail</p>
+                <div class="field">
+                    {{product.seller.email}}
+                </div>
+
+
+        </div>
+        <div class="product-info">
+            <h3>Product informations:</h3>
+                <p>product name</p>
+                <div class="field">
+                    {{product.product_name}}
+                </div>
+
+                <p>Brand</p>
+                <div class="field">
+                    {{product.brand}}
+                </div>
+
+                <p>Description</p>
+                <div class="field">
+                    {{product.description}}
+                </div>
+
+                <p>category</p>
+                <div class="field">
+                    {{product.category}}
+                </div>
+
+                <p>price</p>
+                <div class="field">
+                    {{product.price}}
+                </div>
+
+        </div>
+
+    </div>
+    {%if product.seller == current_user%}
+        <div class="update-delete-section">
+            <div class="update-delete-class">
+                <a href="{{url_for('product_bp.update_product',product_id=product.id)}}">update product</a>
+            </div>
+            <div class="update-delete-class">
+                <a href="{{url_for('product_bp.delete_product',product_id=product.id)}}">delete product</a>
+            </div>
+        </div>
+    {%endif%}
+    
+</div>
+
+
+
+{%endblock content%}
+

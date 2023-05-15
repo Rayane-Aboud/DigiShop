@@ -1,0 +1,129 @@
+
+body {
+    background-image: url('/static/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    font-family: poppins;
+    width: auto;
+    height: auto;
+}
+
+.show-product{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 1084px;
+    height: fit-content;
+    background: #F6F6F6;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.container{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+
+.seller-info{
+    float: left;
+    width: 45%;
+    box-sizing: border-box;
+    padding: 10px;
+
+}
+
+
+.product-info{
+    float: left;
+    width: 45%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.logo{
+    width: 168px;
+    height: 45px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.field{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 5px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.update-delete-section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.update-delete-class{
+
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    background: #FF5951;
+    font-family: poppins;
+    font-weight: 500;
+    color: black;
+    border-radius: 10px;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.update-delete-section div a{
+    color: white;
+    text-decoration: none;
+}
+
+.delete-class{
+    font-size: 50px;
+}
+
+.Submit{
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    background: #FF5951;
+    font-family: poppins;
+    font-weight: 500;
+    color: black;
+    border-radius: 10px;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

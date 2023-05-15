@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/login.css')}}">
+
+    {%if title%}
+    <title>DigiShop - {{title}}</title>
+    {%else%}
+    <title>DigiShop</title>
+    {%endif%}
+
+</head>
+<body>
+    
+    
+{%block content%}
+
+<form method="POST" action="">
+    {{form.hidden_tag()}}<!--gotta see what it does-->
+    <fieldset>
+        <img class="logo" src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
+        <div>
+            {{ form.email(class_="email", placeholder="Email") }}
+            {% if form.email.errors %}
+                <div>
+                    {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        
+        <div>
+            {%if form.password.errors%}
+                {{form.password(class="password", placeholder="Password")}}
+                <div>
+                    {%for error in form.password.errors%}
+                        <span>{{error}}</span>
+                    {%endfor%}
+                </div>
+            {%else%}
+                {{form.password(class="password", placeholder="Password")}}
+            {%endif%}
+        </div>
+        
+        
+    </fieldset>
+    <div>
+        {{form.submit(class="login")}}
+    </div>
+    <div class="additional">
+
+
+        <small class="dha">
+            Don't have an account?<a  href="{{url_for('user_bp.register')}}"> Sign Up</a> 
+         </small>
+
+
+
+    </div>
+</form>
+
+
+{%endblock content%}
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+    {%block style%}
+    {%endblock style%}
+    
+    
+    {%if title%}
+        <title>DigiShop - {{title}}</title>
+    {%else%}
+        <title>DigiShop</title>
+    {%endif%}
+</head>
+<body>
+    <nav>
+        <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Logo">
+        <div class="links">
+            <ul class="horizontal">
+                <li><a href="{{url_for('product_bp.get_products')}}">products</a></li>
+                
+                
+                
+                {%if current_user.is_authenticated %}
+                <li><a href="{{url_for('product_bp.create_product')}}">Add product</a></li>
+                <li><a href="{{url_for('user_bp.account')}}">Account</a></li>
+                <li><a href="{{url_for('user_bp.logout')}}">log out</a></li>
+                {%else%}
+                <li><a href="{{url_for('user_bp.register')}}">Sign-up / login</a></li>
+                {%endif%}     
+                <li><a href="{{url_for('main.about')}}">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    {%block content%}
+    {%endblock content%}
+</body>
+</html>

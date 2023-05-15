@@ -1,0 +1,47 @@
+body{
+    background-image: url('/static/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.show-user-product-list{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    width: 75%;
+    height: 750px;
+    background: #e4d8d8;
+    border-radius: 30px;
+    box-sizing: border-box;
+    
+}
+
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+
+
+.product{
+    background-color: #E1E1E1;
+    margin: 5px;
+    flex-basis: 30%;
+    padding: 5%;
+    overflow: auto;
+  
+    /* Style the scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+
+}
+
+.pages{
+    position: fixed;
+    bottom: 5%;
+    left: 48%;
+    font-size: 20px;
+}

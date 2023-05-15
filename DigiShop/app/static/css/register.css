@@ -1,0 +1,138 @@
+
+body {
+    background-image: url('/static/images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    width: 572px;
+    height: 750px;
+    background: #F6F6F6;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+fieldset{
+    border: none;
+}
+
+.logo{
+    width: 168px;
+    height: 45px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.firstname{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 50px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.familyname{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.username{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.email{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.password{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.confirmpassword{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #D9D9D9;
+    font-size: 18px;
+    font-family: poppins;
+    margin-top: 20px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+small{
+    display: block;
+    margin: 50px auto;
+    font-size: 15px;
+    font-family: poppins;
+    width: 100%;
+    text-align: center;
+  }
+  
+
+.signup{
+    border: none;
+    width: 133px;
+    height: 50px;
+    background: #FF5951;
+    font-family: poppins;
+    font-weight: 500;
+    color: black;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+

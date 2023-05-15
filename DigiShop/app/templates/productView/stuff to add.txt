@@ -1,0 +1,20 @@
+ <!--
+            <fieldset class="field">
+                <div class="checkboxes">
+                    <div>
+                        <label>{{ form.all_products }} All</label>
+                    </div>
+
+                    <div>
+                        <label>{{ form.recommended_products }} Recommended</label>
+                    </div>
+
+                    <div>
+                        <label for="{{ form.category.id }}">Category :</label>
+                        {{ form.category(class="category-options") }}
+                    </div>
+
+                    <div>
+                        <label>{{ form.on_promotion }} On promotion</label>
+                    </div>
+                </div>-->

@@ -1,0 +1,93 @@
+{%extends "base/layout.html"%}
+
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/product_block.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/products.css')}}">
+{%endblock style%}
+
+{%block content%}
+<div class="parent">
+    <div class="ChatBox">
+        <div class="BotChat">
+            <img class="robot" src="{{ url_for('static', filename='images/Robot.png') }}" alt="Robot">
+            <p class="BotText"> Hello! how can i help you to find your product ?</p>
+        </div>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{form.csrf_token }}
+            {{form.hidden_tag()}}<!--gotta see what it does-->
+            <fieldset class="field">
+                <div class="checkboxes">
+                    <div>
+                        <label>{{ form.all_products }} All</label>
+                    </div>
+
+                    <div>
+                        <label>{{ form.recommended_products }} Recommended</label>
+                    </div>
+
+                    <div>
+                        <label for="{{ form.category.id }}">Category :</label>
+                        {{ form.category(class="category-options") }}
+                    </div>
+
+                    <div>
+                        <label>{{ form.on_promotion }} On promotion</label>
+                    </div>
+                </div>
+
+                <div class="ClientZone">
+                    <div>
+                        {% if form.clientText.errors %}
+                          {{ form.clientText(class="clienttext", rows=5) }}
+                          <div class="invalid-feedback">
+                            {% for error in form.clientText.errors %}
+                              <span>{{ error }}</span>
+                            {% endfor %}
+                          </div>
+                        {% else %}
+                          {{ form.clientText(class="clienttext", rows=5) }}
+                        {% endif %}
+                    </div>
+
+                    <div class="submit-image">
+                        {{form.submit(class="submit")}}
+                    </div> 
+                </div>
+            </fieldset>    
+        </form>   
+    </div>
+    <div class="products-nav">
+        {%for product in products.items%}
+            <div class="product-block">
+                <img class="product-image" src="{{ url_for('static',filename='product_pics/'+product.picture) }}" alt="product-image">
+                <p><a href="{{url_for('product_bp.get_product',product_id=product.id)}}">product name : {{product.product_name}}</a></p>
+                <p><a href="{{url_for('user_bp.get_user_products',username = product.seller.username)}}">seller : {{product.seller.username}}</a></p>
+                <p class="description"> {{product.description}} </p>
+                <p class="price"> {{product.price}} </p>
+            </div>
+        {%endfor%}
+    </div>
+    
+    <span>
+    <div class="pages" style="font-size:25px;">
+        {% for page_num in products.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2) %}
+            {% if page_num%}
+                {%if products.page == page_num%}
+                    <a href="{{url_for('product_bp.get_products',page=page_num)}}" style="color: white">{{page_num}}</a>
+                    {%else%}
+                    <a href="{{url_for('product_bp.get_products',page=page_num)}}" style="color: wheat">{{page_num}}</a>
+                    {%endif%}
+            {%else%}
+            <span style="color:white">
+                ...
+            </span>
+            {%endif%}
+        {% endfor %}
+    </div>
+</span>
+
+</div>
+</body>
+</html>
+{%endblock content%}
+

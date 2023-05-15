@@ -1,0 +1,36 @@
+{%extends "base/layout.html"%}
+{%block style%}
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/user_products.css')}}">
+{%endblock style%}
+
+
+{%block content%}
+<div class="show-user-product-list">
+    <h1>Products by : {{user.username}} ({{products.total}})</h1>
+    <div class="product-list">
+        {%for product in products.items%}
+            <div class="product">
+                <p>seller : {{product.seller.username}}</p>
+                <p><a href="{{url_for('product_bp.get_product',product_id=product.id)}}">product name : {{product.product_name}}</a></p>
+                <p>price : {{product.price}}</p>
+            </div>
+        {%endfor%}
+    </div>
+    <div class="pages">
+        {% for page_num in products.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2) %}
+            {% if page_num%}
+                {%if products.page == page_num%}
+                    <a href="{{url_for('user_bp.get_user_products',username= user.username,page=page_num)}}" style="color: red">{{page_num}}</a>
+                    {%else%}
+                    <a href="{{url_for('user_bp.get_user_products',username= user.username,page=page_num)}}" style="color: tomato">{{page_num}}</a>
+                    {%endif%}
+                
+            {%else%}
+            <span style="color:tomato">
+                ...
+            </span>
+            {%endif%}
+        {% endfor %}
+    </div>
+</div>
+{%endblock content%}
