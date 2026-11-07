@@ -1,6 +1,7 @@
 import openai
 
-openai.api_key="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"
+import os
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 prompt = f'''
 given sql table in sqllite3 that has attributes:
